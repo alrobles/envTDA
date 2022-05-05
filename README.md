@@ -70,14 +70,7 @@ was generated. This procedure was performed independently for each
 host-parasite system:
 
 Where *e*<sub>*i**j*</sub> is the distance between *r*<sub>*i**j*</sub>,
-the maxima of two *p*(**x**) distributions. Finally, because the
-distances between hosts present a central tendency in most of the cases,
-we took the average distance in order to summarize the interaction
-information of each bird species in relation to the other host species,
-collapsing the rows in the matrix by:
-
-and generated a table of environmental distances for *n* species for
-each data set.
+the maxima of two *p*(**x**) distributions. 
 
 This approach allowed more efficient computation without losing
 information associated with each species, and it also allowed the

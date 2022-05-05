@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Angel Robles" />
+
+<meta name="date" content="2022-05-04" />
+
+<title>Comparing persistence diagramas of environmental niche centroids of rodents and birds</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Comparing persistence diagramas of
+environmental niche centroids of rodents and birds</h1>
+<h4 class="author">Angel Robles</h4>
+<h4 class="date">2022-05-04</h4>
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>Here we show a case of study where we calculate persisten homology
+for environmental distance associated to the distribution of different
+systems. First we start installing the require r package. We are going
+to use mainly two package: the giotto-ph implementation (in python) that
+allows to use parallel computation and the TDAstats thats allow us plot
+and use statistical inference of the data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;reticulate&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;reticulate&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: reticulate</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: package &#39;reticulate&#39; was built under R version 4.1.3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;tidyverse&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loading required package: tidyverse</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -- Attaching packages --------------------------------------- tidyverse 1.3.1 --</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; v ggplot2 3.3.5     v purrr   0.3.4</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; v tibble  3.1.6     v dplyr   1.0.8</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; v tidyr   1.2.0     v stringr 1.4.0</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; v readr   2.1.2     v forcats 0.5.1</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: package &#39;tibble&#39; was built under R version 4.1.2</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: package &#39;tidyr&#39; was built under R version 4.1.2</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: package &#39;readr&#39; was built under R version 4.1.2</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: package &#39;dplyr&#39; was built under R version 4.1.2</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; -- Conflicts ------------------------------------------ tidyverse_conflicts() --</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x dplyr::filter() masks stats::filter()</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># # create a new environment </span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">virtualenv_create</span>(<span class="st">&quot;TDA-environment&quot;</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; virtualenv: TDA-environment</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># # create a new environment and install from pip</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">virtualenv_install</span>(<span class="st">&quot;TDA-environment&quot;</span>, <span class="st">&quot;giotto-ph&quot;</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Using virtual environment &quot;TDA-environment&quot; ...</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">virtualenv_install</span>(<span class="st">&quot;TDA-environment&quot;</span>, <span class="st">&quot;numpy&quot;</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Using virtual environment &quot;TDA-environment&quot; ...</span></span></code></pre></div>
+</div>
+<div id="method" class="section level2">
+<h2>Method</h2>
+</div>
+<div id="environmental-centroids" class="section level1">
+<h1>Environmental centroids</h1>
+<p>We estimated the environmental distance among host species from their
+ecological niche centroids based on information from the WorldClim
+database (). To avoid multidimensionality we carried out a Principal
+Component Analysis (PCA) of the 19 bioclimatic variables and generated
+new layers from this analysis. We kept the first three PC layers
+(approximately 85% of the total variance explained) and for each species
+we cropped these layers using the IUCN shapefiles of their distribution
+ranges () with the sf R package .</p>
+<p>We used the kernel density estimation corresponding to the
+environmental factor across the geographic distribution from the IUCN
+shapefiles, taking a sample of raster cells within IUCN polygons from
+PCA environmental layers. In order to understand each climatic variable
+as a probability density function (PDF) associated with the host
+geographic distribution , we calculate the environmental centroids from
+firest three principal component variables.</p>
+<p>An Euclidean matrix <span class="math inline">\(\mathbf{E}\)</span>
+of environmental distances of all host species was generated. This
+procedure was performed independently for each host-parasite system:</p>
+<p><span class="math display">\[\begin{equation}
+    \begin{gathered}
+    \mathbf{E} = (e_{ij}) \\
+    e_{ij} = |r_i - r_j|
+    \end{gathered}
+\end{equation}\]</span></p>
+<p>Where <span class="math inline">\(e_{ij}\)</span> is the distance
+between <span class="math inline">\(r_{ij}\)</span>, the maxima of two
+<span class="math inline">\(p(\mathbf{x})\)</span> distributions.
+Finally, because the distances between hosts present a central tendency
+in most of the cases, we took the average distance in order to summarize
+the interaction information of each bird species in relation to the
+other host species, collapsing the rows in the matrix by:</p>
+<p><span class="math display">\[\begin{equation}
+    s(e)_n = \frac{\sum_{i\ne j}^{n} e_{ij}}{n}
+\end{equation}\]</span></p>
+<p>and generated a table of environmental distances for <span class="math inline">\(n\)</span> species for each data set.</p>
+<p>This approach allowed more efficient computation without losing
+information associated with each species, and it also allowed the
+information to be compared between/among species. Because our objective
+was to describe the environment for each species with the available
+geographic data, we took the precaution of considering this multivariate
+probability density function as a continuous function, which permits the
+method to be applied to understanding the Hutchinsonian niche of the
+species in order to compare bird species to each other .</p>
+</div>
+<div id="persistent-homology" class="section level1">
+<h1>Persistent homology</h1>
+<p>Excluding the PASSERIFORMES, we keep the top orders of birds in
+number of species. Then filter the distance matrix for each order and
+get one distance matrix per order.</p>
+<p>Follow this we calculate persistent homology. For each order</p>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<p>Briefly we show two patterns of persistence homology</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="at">file =</span> <span class="st">&quot;phAPODIFORMEES.rds&quot;</span> )</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="at">file =</span> <span class="st">&quot;phCHARADRIIFORMES.rds&quot;</span> )</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p1</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: Removed 1 rows containing missing values (geom_segment).</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><img src="data:image/png;base64,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" /></p>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

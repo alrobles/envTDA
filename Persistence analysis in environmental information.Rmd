@@ -1,0 +1,58 @@
+---
+title: "Persistence analysis in environmental information"
+author: "Angel Robles"
+date: "5/4/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+
+
+## Method
+
+#Environmental centroids 
+
+We estimated the environmental distance among host species from their ecological niche centroids based on information from the WorldClim database (\url{https://www.worldclim.org/}). 
+To avoid multidimensionality we carried out a Principal Component Analysis (PCA) of the 19 bioclimatic variables and generated new  layers from this analysis. 
+We kept the first three PC layers (approximately 85\% of the total variance explained) and for each species we cropped these layers using the IUCN shapefiles of their distribution ranges (\url{https://www.iucnredlist.org/resources/spatial-data-download}) with the sf R 
+package
+\cite{Pebesma2018sf}. 
+
+
+We used the kernel density estimation corresponding to the environmental factor across the geographic distribution from the IUCN shapefiles, taking a sample of raster cells within IUCN polygons from PCA environmental layers. In order to understand each climatic variable as a probability density function (PDF) associated with the host geographic distribution \cite{zhang2018modelling}, we calculate the environmental centroids from firest three principal component variables.
+
+An Euclidean matrix $\mathbf{E}$ of environmental distances of all host species was generated. This procedure was performed independently for each host-parasite system: 
+
+
+\begin{equation}
+    \begin{gathered}
+    \mathbf{E} = (e_{ij}) \\
+    e_{ij} = |r_i - r_j|
+    \end{gathered}
+\end{equation}
+
+Where $e_{ij}$ is the distance between $r_{ij}$, the maxima of two $p(\mathbf{x})$ distributions. Finally, because the distances between hosts present a central tendency in most of the cases, we took the average distance in order to summarize the interaction information of each bird species in relation to the other host species, collapsing the rows in the matrix by:
+\begin{equation}
+    s(e)_n = \frac{\sum_{i\ne j}^{n} e_{ij}}{n}
+\end{equation}
+
+and generated a table of environmental distances for $n$ species for each data set. 
+
+This approach allowed more efficient computation without losing information associated with each species, and it also allowed the information to be compared between/among species. Because our objective was to describe the environment for each species with the available geographic data, we took the precaution of considering this multivariate probability density function as a continuous function, which permits the method to be applied to understanding the Hutchinsonian niche of the species in order to compare bird species to each other \cite{qiao2017cautionary}. 
+
+#Persistent homology
+Excluding the PASSERIFORMES, we keep the top orders of birds in number of species. Then filter the distance matrix for each order and get one distance matrix per order.
+
+Follow this we calculate persistent homology. For each order
+
+
+
+```{r, fig.show='hold'}
+p1 <- read_rds(file = "phAPODIFORMEES.rds" )
+p2 <- read_rds(file = "phCHARADRIIFORMES.rds" )
+```
